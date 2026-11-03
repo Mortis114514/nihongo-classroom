@@ -52,3 +52,18 @@ export function markWord(id, known) {
 export function getMyWords() {
   return read(KEYS.myWords, [])
 }
+
+// ---- 測驗紀錄 ----
+// 格式：[{ date: 'YYYY-MM-DD', mode: 'mixed' | 'vocab' | 'grammar', total, correct, wrongIds: [] }]，新的在後面
+
+const MAX_QUIZ_HISTORY = 100
+
+export function getQuizHistory() {
+  const list = read(KEYS.quizHistory, [])
+  return Array.isArray(list) ? list : []
+}
+
+export function addQuizRecord(record) {
+  const list = [...getQuizHistory(), { date: today(), ...record }]
+  write(KEYS.quizHistory, list.slice(-MAX_QUIZ_HISTORY))
+}
