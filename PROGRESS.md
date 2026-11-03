@@ -17,7 +17,7 @@
 | --- | --- | --- |
 | 專案架構 | ✅ 完成 | Vite vanilla、hash 路由、localStorage 存取（`src/storage.js`）、資料載入（`src/data.js`） |
 | 單字卡 | ✅ 完成 | 翻卡、記住了／再複習、打亂順序、只看未記住的、鍵盤快捷鍵、深色模式、手機版 |
-| 文法筆記 | ⬜ 未開始 | `public/data/grammar.json` 還是空的，需要先放範例資料 |
+| 文法筆記 | ✅ 完成 | 11 個範例文法（N5～N1），可展開收合、依等級篩選、全部展開／收合 |
 | 測驗 | ⬜ 未開始 | 需要 `questions.json`；單字題可以從單字資料自動產生 |
 | 單字本 | ⬜ 未開始 | 新增／編輯／刪除自己的單字（存在 `myWords`），單字卡已經會讀取 |
 | 首頁 | ⬜ 未開始 | 完成後把 `src/main.js` 的 `DEFAULT_ROUTE` 改回 `'home'` |
@@ -38,9 +38,11 @@
 - localStorage 鍵：`progress`、`myWords`、`quizHistory`、`settings`。
   - `progress` 格式：`{ 單字id: { known, reviews, lastReviewed: 'YYYY-MM-DD' } }`
 - 顏色都定義在 `src/styles/base.css` 的 `:root` 變數，深色模式已支援 `data-theme='dark' / 'light'` 強制切換。
-- 目前範例單字 12 個（第1課、第2課各 6 個）。
+- 目前範例單字 12 個（第1課、第2課各 6 個）；範例文法 11 個（N5 3、N4 4、N3 2、N2 1、N1 1）。
+- 文法資料多了 `level` 欄位（N1～N5），已同步到 PLAN.md 的資料結構範例。
 
 ## 完成紀錄
 
 - 2026-11-03　專案初始化並推上 GitHub
 - 2026-11-03　單字卡完成（`38b99f8`）
+- 2026-11-03　文法筆記完成（含 N1～N5 等級）

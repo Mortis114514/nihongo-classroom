@@ -2,12 +2,13 @@
 import './styles/base.css'
 import './styles/components.css'
 import * as flashcards from './pages/flashcards.js'
+import * as grammar from './pages/grammar.js'
 
 // page 為空的分頁代表還沒完成，會顯示「開發中」
 const routes = [
   { id: 'home', label: '首頁' },
   { id: 'flashcards', label: '單字卡', page: flashcards },
-  { id: 'grammar', label: '文法筆記' },
+  { id: 'grammar', label: '文法筆記', page: grammar },
   { id: 'quiz', label: '測驗' },
   { id: 'wordbook', label: '單字本' },
 ]
