@@ -1,0 +1,46 @@
+# 開發進度
+
+> 每完成一個功能就更新這份檔案。功能規格見 [PLAN.md](PLAN.md)。
+
+最後更新：2026-11-03
+
+## 開發流程
+
+1. 一次只做一個功能。
+2. 做完先在瀏覽器實際測試，確認正常。
+3. `git commit` 並 `git push` 到 GitHub。
+4. 更新這份 PROGRESS.md，列出剩下的工作。
+
+## 第一階段
+
+| 功能 | 狀態 | 備註 |
+| --- | --- | --- |
+| 專案架構 | ✅ 完成 | Vite vanilla、hash 路由、localStorage 存取（`src/storage.js`）、資料載入（`src/data.js`） |
+| 單字卡 | ✅ 完成 | 翻卡、記住了／再複習、打亂順序、只看未記住的、鍵盤快捷鍵、深色模式、手機版 |
+| 文法筆記 | ⬜ 未開始 | `public/data/grammar.json` 還是空的，需要先放範例資料 |
+| 測驗 | ⬜ 未開始 | 需要 `questions.json`；單字題可以從單字資料自動產生 |
+| 單字本 | ⬜ 未開始 | 新增／編輯／刪除自己的單字（存在 `myWords`），單字卡已經會讀取 |
+| 首頁 | ⬜ 未開始 | 完成後把 `src/main.js` 的 `DEFAULT_ROUTE` 改回 `'home'` |
+| 設定 | ⬜ 未開始 | 深色模式切換（`data-theme`）、清除學習紀錄；新增 `src/pages/settings.js` |
+| 部署上線 | ⬜ 未開始 | |
+
+## 第二階段（尚未開始）
+
+章節分類、錯題本、間隔複習、發音、五十音
+
+## 第三階段（尚未開始）
+
+動詞變化、帳號同步、匯入匯出
+
+## 技術備忘
+
+- 頁面模組匯出 `render(root)`，可回傳清理函式（離開頁面時由 `main.js` 呼叫）。
+- localStorage 鍵：`progress`、`myWords`、`quizHistory`、`settings`。
+  - `progress` 格式：`{ 單字id: { known, reviews, lastReviewed: 'YYYY-MM-DD' } }`
+- 顏色都定義在 `src/styles/base.css` 的 `:root` 變數，深色模式已支援 `data-theme='dark' / 'light'` 強制切換。
+- 目前範例單字 12 個（第1課、第2課各 6 個）。
+
+## 完成紀錄
+
+- 2026-11-03　專案初始化並推上 GitHub
+- 2026-11-03　單字卡完成（`38b99f8`）
